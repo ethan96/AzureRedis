@@ -22,18 +22,18 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
             result = await pdService.readProduct(id);
             break;
         case "POST":
-            const newCar = req.body as Product;
-            await pdService.createProduct(newCar);
+            const newProduct = req.body as Product;
+            await pdService.createProduct(newProduct);
             result = "Create new product Ok"
             break;
         case "PUT":
-            const updCar = req.body as Product;
-            await pdService.updateProduct(updCar);
+            const updProduct = req.body as Product;
+            await pdService.updateProduct(updProduct);
             result = "Update product Ok";
             break;
         case "DELETE":
-            const delCar = req.body as Product;
-            await pdService.deleteProduct(delCar);
+            const delProduct = req.body as Product;
+            await pdService.deleteProduct(delProduct);
             result = "Delete product Ok";
             break;
     }
